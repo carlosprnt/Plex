@@ -8,9 +8,18 @@
   border-radius: var(--glass-radius-sm);
 }
 
+.avatarImg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--glass-border);
+}
+
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-season-1), var(--color-season-3));
   display: flex;
@@ -18,9 +27,13 @@
   justify-content: center;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: white;
   flex-shrink: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 .info {

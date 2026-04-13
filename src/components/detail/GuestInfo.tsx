@@ -8,7 +8,21 @@ interface GuestInfoProps {
 export default function GuestInfo({ guest }: GuestInfoProps) {
   return (
     <div className={styles.card}>
-      <div className={styles.avatar}>
+      {guest.avatarUrl ? (
+        <img
+          src={guest.avatarUrl}
+          alt={guest.name}
+          className={styles.avatarImg}
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = 'none';
+            (e.target as HTMLImageElement).nextElementSibling?.classList.remove(styles.hidden);
+          }}
+        />
+      ) : null}
+      <div
+        className={`${styles.avatar} ${guest.avatarUrl ? styles.hidden : ''}`}
+        style={guest.avatarColor ? { background: guest.avatarColor } : undefined}
+      >
         {guest.name.charAt(0)}
       </div>
       <div className={styles.info}>

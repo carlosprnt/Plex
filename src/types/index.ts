@@ -1,6 +1,8 @@
 export interface Guest {
   name: string;
   role: string;
+  avatarUrl?: string;
+  avatarColor?: string;
   wikipediaUrl?: string;
   socialLinks?: {
     youtube?: string;

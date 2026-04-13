@@ -15,6 +15,9 @@ const FLAG_EMOJI: Record<string, string> = {
   BO: '\u{1F1E7}\u{1F1F4}', CL: '\u{1F1E8}\u{1F1F1}', AR: '\u{1F1E6}\u{1F1F7}',
   PY: '\u{1F1F5}\u{1F1FE}', BR: '\u{1F1E7}\u{1F1F7}', EG: '\u{1F1EA}\u{1F1EC}',
   SA: '\u{1F1F8}\u{1F1E6}', TR: '\u{1F1F9}\u{1F1F7}', SG: '\u{1F1F8}\u{1F1EC}',
+  LK: '\u{1F1F1}\u{1F1F0}', DO: '\u{1F1E9}\u{1F1F4}', JM: '\u{1F1EF}\u{1F1F2}',
+  HN: '\u{1F1ED}\u{1F1F3}', PA: '\u{1F1F5}\u{1F1E6}', EC: '\u{1F1EA}\u{1F1E8}',
+  VE: '\u{1F1FB}\u{1F1EA}', TZ: '\u{1F1F9}\u{1F1FF}',
 };
 
 function getFlag(id: string): string {
