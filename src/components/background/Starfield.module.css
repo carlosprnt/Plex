@@ -1,0 +1,7 @@
+.container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 0%, #0a0a2e 0%, #030014 70%);
+}

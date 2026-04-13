@@ -1,0 +1,62 @@
+.footer {
+  position: relative;
+  z-index: 10;
+  padding: var(--space-6) var(--space-6);
+  background: rgba(3, 0, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--glass-border);
+  margin-top: auto;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: center;
+}
+
+.teamLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.member {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.memberRole {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+}
+
+.credit {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.link {
+  color: var(--color-season-1);
+  transition: opacity 0.2s;
+}
+
+.link:hover {
+  opacity: 0.8;
+}

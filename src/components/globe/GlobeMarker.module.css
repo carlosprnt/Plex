@@ -1,0 +1,38 @@
+.marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.dot.hasGuests {
+  width: 10px;
+  height: 10px;
+}
+
+.ring {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid;
+  border-radius: 50%;
+  animation: ringPulse 2s ease-out infinite;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
