@@ -159,6 +159,38 @@ export default function GlobeView({ activeSeasons, onCountrySelect }: GlobeViewP
   }, [activeSeasons]);
 
   const currentCountry = currentJourneyIndex >= 0 ? journey[currentJourneyIndex] : null;
+  const currentSeasonId = currentCountry?.seasonId ?? null;
+
+  // During playback: only show arcs for the season currently playing,
+  // and only arcs up to the current country (progressive reveal)
+  const displayArcsData = useMemo(() => {
+    if (!isPlaying || currentSeasonId === null || currentJourneyIndex < 0) return arcsData;
+
+    // Find the index within the current season
+    const seasonCountries = journey.filter(c => c.seasonId === currentSeasonId);
+    const currentOrderInSeason = currentCountry?.orderInSeason ?? 0;
+
+    // Only show arcs for the current season, up to the current country
+    return arcsData.filter(arc => {
+      if (arc.seasonId !== currentSeasonId) return false;
+      // Find the arc's position: it connects orderInSeason N to N+1
+      // Show arcs whose end country has been reached
+      const endCountry = seasonCountries.find(
+        c => Math.abs(c.lat - arc.endLat) < 0.1 && Math.abs(c.lng - arc.endLng) < 0.1
+      );
+      return endCountry ? endCountry.orderInSeason <= currentOrderInSeason : false;
+    });
+  }, [isPlaying, currentSeasonId, currentJourneyIndex, currentCountry, arcsData, journey]);
+
+  // During playback: dim points from other seasons
+  const displayPointsData = useMemo(() => {
+    if (!isPlaying || currentSeasonId === null) return pointsData;
+    return pointsData.map(p => ({
+      ...p,
+      color: p.seasonId === currentSeasonId ? p.color : 'rgba(255,255,255,0.15)',
+      size: p.seasonId === currentSeasonId ? p.size : 0.25,
+    }));
+  }, [isPlaying, currentSeasonId, pointsData]);
 
   const handlePointClick = useCallback(
     (point: object) => {
@@ -195,7 +227,7 @@ export default function GlobeView({ activeSeasons, onCountrySelect }: GlobeViewP
           atmosphereColor="#1a3a5c"
           atmosphereAltitude={0.2}
           // Points
-          pointsData={pointsData}
+          pointsData={displayPointsData}
           pointLat="lat"
           pointLng="lng"
           pointColor="color"
@@ -224,7 +256,7 @@ export default function GlobeView({ activeSeasons, onCountrySelect }: GlobeViewP
             </div>`;
           }}
           // Arcs
-          arcsData={arcsData}
+          arcsData={displayArcsData}
           arcStartLat="startLat"
           arcStartLng="startLng"
           arcEndLat="endLat"
@@ -236,7 +268,7 @@ export default function GlobeView({ activeSeasons, onCountrySelect }: GlobeViewP
           arcDashAnimateTime={2000}
           arcAltitudeAutoScale={0.35}
           // Rings (pulse effect on points with guests)
-          ringsData={pointsData.filter(p => p.country.guests.length > 0)}
+          ringsData={displayPointsData.filter(p => p.country.guests.length > 0 && (!isPlaying || p.seasonId === currentSeasonId))}
           ringLat="lat"
           ringLng="lng"
           ringColor="color"
@@ -244,7 +276,7 @@ export default function GlobeView({ activeSeasons, onCountrySelect }: GlobeViewP
           ringPropagationSpeed={2}
           ringRepeatPeriod={1200}
           // Labels
-          labelsData={pointsData}
+          labelsData={isPlaying && currentSeasonId !== null ? pointsData.filter(p => p.seasonId === currentSeasonId) : pointsData}
           labelLat="lat"
           labelLng="lng"
           labelText={(d: object) => (d as PointData).country.name}
