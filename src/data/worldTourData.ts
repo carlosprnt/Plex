@@ -103,11 +103,10 @@ export const seasons: Season[] = [
           {
             name: 'Frank Cuesta',
             role: 'Aventurero / Presentador TV',
-            avatarUrl: 'https://pbs.twimg.com/profile_images/1695039498893701120/hFJyrYFu_400x400.jpg',
             avatarColor: '#4CAF50',
             wikipediaUrl: 'https://es.wikipedia.org/wiki/Frank_Cuesta',
             socialLinks: {
-              youtube: 'https://www.youtube.com/@FrankCuesta',
+              youtube: 'https://www.youtube.com/@santuariolibertad',
               instagram: 'https://www.instagram.com/frankcuestainsta/',
             },
           },
@@ -175,11 +174,10 @@ export const seasons: Season[] = [
           {
             name: 'El Xocas',
             role: 'Streamer / Creador de contenido',
-            avatarUrl: 'https://pbs.twimg.com/profile_images/1807903949384196097/lKkHbTyv_400x400.jpg',
             avatarColor: '#E91E63',
             wikipediaUrl: 'https://es.wikipedia.org/wiki/Xokas',
             socialLinks: {
-              youtube: 'https://www.youtube.com/@Xocas',
+              youtube: 'https://www.youtube.com/@elxokas',
               twitter: 'https://x.com/Xsjado',
               instagram: 'https://www.instagram.com/xocas/',
             },
@@ -198,11 +196,10 @@ export const seasons: Season[] = [
           {
             name: 'IlloJuan',
             role: 'Streamer / Creador de contenido',
-            avatarUrl: 'https://pbs.twimg.com/profile_images/1835293164543688704/xkBCXnmr_400x400.jpg',
             avatarColor: '#FF9800',
             wikipediaUrl: 'https://es.wikipedia.org/wiki/IlloJuan',
             socialLinks: {
-              youtube: 'https://www.youtube.com/@IlloJuan',
+              youtube: 'https://www.youtube.com/@illojuan_',
               twitter: 'https://x.com/IlloJuan',
               instagram: 'https://www.instagram.com/illojuan/',
             },
@@ -455,12 +452,11 @@ export const seasons: Season[] = [
           {
             name: 'Jordi Sánchez',
             role: 'Actor ("La que se avecina")',
-            avatarUrl: 'https://pbs.twimg.com/profile_images/1589977977804013570/hT2BmFon_400x400.jpg',
             avatarColor: '#9C27B0',
             wikipediaUrl: 'https://es.wikipedia.org/wiki/Jordi_S%C3%A1nchez_(actor)',
             socialLinks: {
               instagram: 'https://www.instagram.com/jordisanchez_actor/',
-              twitter: 'https://x.com/jordisanchez_ac',
+              twitter: 'https://x.com/jordi_sz_actor',
             },
           },
         ],
@@ -547,13 +543,12 @@ export const seasons: Season[] = [
           {
             name: 'Aitana',
             role: 'Cantante / Artista',
-            avatarUrl: 'https://pbs.twimg.com/profile_images/1849839621435478017/3kBPeKCb_400x400.jpg',
             avatarColor: '#E91E63',
             wikipediaUrl: 'https://es.wikipedia.org/wiki/Aitana_Oca%C3%B1a',
             socialLinks: {
+              youtube: 'https://www.youtube.com/@aitana',
               instagram: 'https://www.instagram.com/aitanax/',
               twitter: 'https://x.com/Aitanax',
-              youtube: 'https://www.youtube.com/@AitanaOcana',
             },
           },
         ],
@@ -589,21 +584,53 @@ export const seasons: Season[] = [
         guests: [],
       },
       {
+        id: 'US-3',
+        name: 'Estados Unidos',
+        lat: 25.76,
+        lng: -80.19,
+        seasonId: 3,
+        orderInSeason: 13,
+        description: 'Miami y Hawái. Encuentro con Myke Towers y el incidente con las motos de agua que acabó en amenazas de muerte.',
+        guests: [
+          {
+            name: 'Myke Towers',
+            role: 'Cantante / Artista urbano',
+            avatarColor: '#FF5722',
+            wikipediaUrl: 'https://es.wikipedia.org/wiki/Myke_Towers',
+            socialLinks: {
+              youtube: 'https://www.youtube.com/@MykeTowers',
+              instagram: 'https://www.instagram.com/myketowers/',
+              twitter: 'https://x.com/MYKETOWERS',
+            },
+          },
+        ],
+      },
+      {
+        id: 'DO-3',
+        name: 'República Dominicana',
+        lat: 18.49,
+        lng: -69.97,
+        seasonId: 3,
+        orderInSeason: 14,
+        description: 'Parada en el Caribe dominicano. Reencuentro con Aitana, que rodaba allí su videoclip.',
+        guests: [],
+      },
+      {
         id: 'ES-3',
         name: 'España',
         lat: 41.50,
         lng: -5.75,
         seasonId: 3,
-        orderInSeason: 13,
+        orderInSeason: 15,
         description: 'Final de la vuelta al mundo visitando Murcia, Tordesillas y Zamora con amigos. Cameo de Javier de Hoyos en el último episodio.',
         guests: [
           {
             name: 'Javier de Hoyos',
             role: 'Periodista / Presentador TV',
             avatarColor: '#607D8B',
-            wikipediaUrl: 'https://es.wikipedia.org/wiki/Javier_de_Hoyos',
             socialLinks: {
-              instagram: 'https://www.instagram.com/javierdehoyos/',
+              youtube: 'https://www.youtube.com/@javihoyos',
+              instagram: 'https://www.instagram.com/javihoyosmartinez/',
               twitter: 'https://x.com/JavierdeHoyos',
             },
           },

@@ -17,7 +17,7 @@ export default function Header() {
             <span className={styles.statLabel}>Temporadas</span>
           </div>
           <div className={styles.stat}>
-            <span className={styles.statValue}>50</span>
+            <span className={styles.statValue}>52</span>
             <span className={styles.statLabel}>Países</span>
           </div>
           <div className={styles.stat}>
